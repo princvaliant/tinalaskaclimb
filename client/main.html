@@ -1,0 +1,26 @@
+<head>
+  <title>Tin in Alaska</title>
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <h1>Tin's messages from Alaska (recent on top)</h1>
+    </header>
+
+    <ul>
+        {{#each posts}}
+            {{> post}}
+        {{/each}}
+    </ul>
+</div>
+</body>
+
+<template name="post">
+    <li>
+        <span class="text">{{formatDate(date)}}</span>
+        <br/><br/>
+        <span class="text"><b>{{posth(text)}}</b></span>
+        <br/>
+    </li>
+</template>
