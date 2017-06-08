@@ -51,7 +51,9 @@ function listen () {
     });
 
     gmailClients[user._id].onNewEmail('to:tinalaskaclimb@gmail.com', function (message) {
-        Posts.upsert({_id: message._id}, message);
+        if (message.from.indexOf('279-7304') >= 0 || message.from.indexOf('881 6 234') >= 0) {
+            Posts.upsert({_id: message._id}, message);
+        }
     });
 }
 
